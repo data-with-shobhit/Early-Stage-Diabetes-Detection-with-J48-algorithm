@@ -1,0 +1,82 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-xl-12">
+                <h4 style="font-size: 18px; text-align:center;">Patient Details</h4>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table" style="font-size: 12px;">
+                <tbody>
+                    <tr>
+                        <td>Patient ID : {{patient_data.p_id}} </td>
+                    </tr>
+                    <tr>
+                        <td>Patient Name : {{patient_data.p_fname}} {{patient_data.p_lname}}</td>
+                        <td>Age : {{patient_data.age}}</td>
+                    </tr>
+                    <tr>
+                        <td>Contact No : {{patient_data.contact_no}}</td>
+                        <td>Report Date : {{patient_data.date}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-xl-12">
+                    <h4 style="font-size: 18px; text-align:center;">Final Test Report</h4>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table" style="font-size: 12px;">
+                    <tbody>
+                        <tr>
+                            <td spot="col" style="font-size: 14px;"><b><u>Name</u> </b></td>
+                            <td spot="col" style="font-size: 14px;"><b><u> Observed Value</u></b></td>
+                            <td spot="col" style="font-size: 14px;"><b><u>Biological Range</u></b></td>
+                        </tr>
+                        <tr>
+                            <td>Glucose </td>
+                            <td><b> {{patient_data.glucose}} mg/dL </b></td>
+                            <td>99 mg/dL or below</td>
+                        </tr>
+                        <tr>
+                            <td>Blood Pressure </td>
+                            <td><b> {{patient_data.blood_pressure}} </b></td>
+                            <td>120/80 or lower</td>
+                        </tr>
+                        <tr>
+                            <td>SkinThickness </td>
+                            <td><b> {{patient_data.skin_thikness}} mm </b></td>
+                            <td>1.60 mm to 25.45 mm</td>
+                        </tr>
+                        <tr>
+                            <td>Insulin </td>
+                            <td><b> {{patient_data.insulin}} pmol/L </b></td>
+                            <td>111-1153 pmol/L</td>
+                        </tr>
+                        <tr>
+                            <td>BMI </td>
+                            <td><b> {{patient_data.bmi}} </b></td>
+                            <td>18.5 to 24.9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <h4 style="font-size: 12px; text-align:center;"> ** End of Report ** </h4>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-xl-12">
+                    <h4 style="font-size: 12px;"> <u>Precautions:</u> </h4>
+                    {{patient_data.precautions}}
+                    
+                </div>
+            </div>
+        </div>
+    </div>

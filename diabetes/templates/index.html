@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container align-items-center flex-column">
+
+        <img class="masthead-avatar mb-3" src="static/assets/img/diabetes.png" />
+        
+        <h5 class="masthead-subheading text-uppercase mb-2">Welcome</h5>
+        <h1 class="masthead-heading text-uppercase mb-0">Diabetes Software</h1>
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="text-center mt-1">
+            <a class="btn btn-xl btn-outline-light" href="log_in">
+                <i class="fas fa-user me-2"></i>
+                Log In
+            </a>
+            <a class="btn btn-xl btn-outline-light" style="margin-left: 20px;" href="register">
+                <i class="fas fa-pen me-2"></i>
+                Register
+            </a>
+        </div>
+        
+    </div>
+</header>
+{% endblock body %}

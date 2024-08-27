@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock title %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<header class="masthead bg-primary text-white text-left">
+    <div class="container align-items-center flex-column">
+        <section>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card mb-4" style="height:550px;">
+                        <form action="log_out" method="POST">
+                            {% csrf_token %}
+                            <div class="card-body text-center">
+                                <h5 class="my-3" style="color:black;"> Welcome </h5>
+                                <img src="static/assets/img/user.png"
+                                    alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                <h3 class="my-3" style="color:black;"> {{fname}} {{lname}} </h3>
+                                <p class="text-muted mb-3">{{username}}</p>
+                                <div class="d-flex justify-content-center mb-2">
+                                    <button type="submit" class="btn btn-primary"> Log Out </button>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card mb-4" style="height:550px;">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 col-xl-10">
+                                <div class="form-floating mb-3 mt-3"
+                                    style="color:rgba(3, 0, 41, 0.979);text-align:center;">
+                                    <h2>Patient Details</h2>
+                                    <hr>
+                                </div>
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-floating mb-3 mt-3" style="height:350px;overflow: auto;">
+                                        <!-- First Name input-->
+                                        <div class="form-floating mb-3 col">
+                                            <input class="form-control" name="p_fname"  id="p_fname" type="text"
+                                                placeholder="Enter your name..." data-sb-validations="required" required/>
+                                            <label for="p_fname">First Name <span style="color: red;">*</span> </label>
+                                            <div class="invalid-feedback" data-sb-feedback="p_fname:required">A First Name is
+                                                required.</div>
+                                        </div>
+                                        <!-- Last Name input-->
+                                        <div class="form-floating mb-3 col">
+                                            <input class="form-control" name="p_lname"  id="p_lname" type="text"
+                                                placeholder="Enter your name..." data-sb-validations="required" required/>
+                                            <label for="p_lname">Last Name <span style="color: red;">*</span> </label>
+                                            <div class="invalid-feedback" data-sb-feedback="p_lname:required">A Last Name is
+                                                required.</div>
+                                        </div>
+                                        <!-- Phone number input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" name="contact_no"  id="contact_no" type="number"
+                                                placeholder="(123) 456-7890" data-sb-validations="required" required/>
+                                            <label for="contact_no">Phone number <span style="color: red;">*</span> </label>
+                                            <div class="invalid-feedback" data-sb-feedback="contact_no:required">A contact_no
+                                                number
+                                                is required.</div>
+                                        </div>
+                                        <!-- Age input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" name="age"  id="age" type="number"
+                                                placeholder="Eg. 28" data-sb-validations="required" required/>
+                                            <label for="age">Age <span style="color: red;">*</span> </label>
+                                            <div class="invalid-feedback" data-sb-feedback="age:required">A Age is required.</div>
+                                        </div>
+                                        <!-- Pregnancies input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" name="pregnancies"  id="pregnancies" type="number" 
+                                            placeholder="0" value="0" data-sb-validations="required" required/>
+                                            <label for="pregnancies">Pregnancies <span style="color: red;">*</span> </label>
+                                        </div>
+                                        <!-- Glucose input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" name="glucose"  id="glucose" type="number"
+                                            placeholder="0" data-sb-validations="required" required/>
+                                            <label for="glucose">Glucose <span style="color: red;">*</span> </label>
+                                        </div>
+                                        <!-- BloodPressure input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" name="blood_pressure"  id="blood_pressure" type="number" 
+                                            placeholder="0" data-sb-validations="required" required/>
+                                            <label for="blood_pressure">Blood Pressure <span style="color: red;">*</span> </label>
+                                        </div>
+                                        <!-- Skin Thickness input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" name="skin_thikness"  id="skin_thikness" type="number" 
+                                            placeholder="0" data-sb-validations="required" required/>
+                                            <label for="skin_thikness">Skin Thickness <span style="color: red;">*</span> </label>
+                                        </div>
+                                        <!-- Insulin input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" name="insulin"  id="insulin" type="number"
+                                            placeholder="0" data-sb-validations="required" required/>
+                                            <label for="insulin">Insulin <span style="color: red;">*</span> </label>
+                                        </div>
+                                        <!-- BMI input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" name="bmi"  id="bmi" type="float"
+                                            placeholder="0" data-sb-validations="required" required/>
+                                            <label for="bmi">BMI <span style="color: red;">*</span> </label>
+                                        </div>
+                                        <!-- DiabetesPedigreeFunction input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" name="dpf"  id="dpf" type="float" 
+                                            placeholder="0" data-sb-validations="required" required/>
+                                            <label for="dpf">Diabetes Pedigree Function <span style="color: red;">*</span> </label>
+                                        </div>
+                                    </div>
+                                    <!-- Submit Button-->
+                                    <button class="btn btn-primary btn-xl" id="submitButton"
+                                        type="submit">Submit</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <header>
+        {% endif %}
+
+        {% endblock body %}
